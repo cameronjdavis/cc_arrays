@@ -1,4 +1,4 @@
- methods that have a bang (!) alter the original array
+# methods that have a bang (!) alter the original array
 #grades = ["A", "B", "C", "D", "F"]
 #p grades
 #p grades.shuffle
