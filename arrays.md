@@ -77,7 +77,7 @@ grades.push("A-")
 p grades
 grades.pop
 p grades
-grades << "C+" # equivilant to push, knwon as the shovel operator
+grades << "C+" # equivalent to push, known as the shovel operator
 p grades
 ```
 
@@ -160,7 +160,7 @@ p grades.shuffle # randomly shuffle elemnts
 p grades.sample # select a random element from the array
 ```
 
-We can interogate an array about its contents.
+We can interrogate an array about its contents.
 
 ```
 # checks if any element in the array meets the criteria
