@@ -120,13 +120,13 @@ p grades[3]
 
 Arrays have operators just like numbers have operators.
 
-* \+ (add elements into a single array)
+* `\+` (add elements into a single array)
 
-* \- (remove elements in one array from another)
+* `\-` (remove elements in one array from another)
 
-* & (find the elements present in both arrays)
+* `&` (find the elements present in both arrays, aka intersection)
 
-* | (find the set of elements in either array without duplicates)
+* `|` (find the set of elements in either array without duplicates, aka union)
 
 ```
 p ["A", "B", "C"] + ["D", "B", "F"]
