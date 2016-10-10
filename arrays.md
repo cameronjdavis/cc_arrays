@@ -17,7 +17,7 @@ The array's job is only to remember it has elements and to get each element when
 
 ## Accessing arrays
 
-Individual elements can be addressed with an index. Like an index in a book that points to the location of a topic, an array index points to the location of an element in the array. The index is a number that starts at zero and increases to one less than the length of the array.
+Individual elements can be addressed with an index. Like an index in a book that points to the location of a topic, an array index points to the location of an element in the array. The index is a number that starts at zero and increments to one less than the length of the array.
 
 ```
 grades = ["A", "B", "C", "B+", "F"]
@@ -120,9 +120,9 @@ p grades[3]
 
 Arrays have operators just like numbers have operators.
 
-* + (add elements into a single array)
+* \+ (add elements into a single array)
 
-* - (remove elements in one array from another)
+* \- (remove elements in one array from another)
 
 * & (find the elements present in both arrays)
 
