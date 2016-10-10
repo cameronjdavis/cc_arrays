@@ -46,7 +46,7 @@ p grades.last(2)
 
 ## Creating an empty array
 
-In Ruby, there are multiple ways to intialise an empty array.
+In Ruby, there are multiple ways to initialise an empty array.
 
 ```
 grades = []
@@ -236,17 +236,3 @@ p grades
 p grades.shuffle!
 p grades
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
