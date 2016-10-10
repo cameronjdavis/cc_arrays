@@ -1,0 +1,127 @@
+<h1 id="arrays">Arrays</h1>
+<h2 id="what-are-arrays">What are arrays?</h2>
+<p>So far we have used single items of data, e.g. the name of a song, or a student's grade. More common is that we have a collection of items, e.g. a list of songs, or the grades of an entire class. An array can store these collections of items (aka elements).</p>
+<pre><code>grade = &quot;A&quot;
+grades = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;B+&quot;, &quot;F&quot;]</code></pre>
+<p>An array is useful because we can represent a large collection with a single name, e.g. <code>grades</code>. And we can perform repetitive tasks on each of the elements. More on this later.</p>
+<h2 id="what-are-arrays-not-for">What are arrays not for?</h2>
+<p>The array's job is only to remember it has elements and to get each element when asked. It doesn't know what is in each element.</p>
+<h2 id="accessing-arrays">Accessing arrays</h2>
+<p>Individual elements can be addressed with an index. Like an index in a book that points to the location of a topic, an array index points to the location of an element in the array. The index is a number that starts at zero and increments to one less than the length of the array.</p>
+<pre><code>grades = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;B+&quot;, &quot;F&quot;]
+puts grades[0]
+puts grades[2]
+puts grades[4] # 4 = 5 - 1, 5 is the length of the array
+p grades[10] # Use p instead of puts to inspect something</code></pre>
+<p>Ruby allows a negative array index.</p>
+<pre><code>grades = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;B+&quot;, &quot;F&quot;]
+puts grades[-1]</code></pre>
+<p>Ruby has handy methods for accessing arrays.</p>
+<pre><code>grades = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;B+&quot;, &quot;F&quot;]
+p grades.first
+p grades.first(2)
+p grades.last
+p grades.last(2)</code></pre>
+<h2 id="creating-an-empty-array">Creating an empty array</h2>
+<p>In Ruby, there are multiple ways to initialise an empty array.</p>
+<pre><code>grades = []
+grades = Array.new()</code></pre>
+<p>Some languages require you to say how big the array will be when it is created, but Ruby isn't strict about this and we can optionally tell Ruby how big the array will be.</p>
+<pre><code>grades = Array.new(3) # telling Ruby how big the array will be</code></pre>
+<h2 id="adding-and-removing-items">Adding and removing items</h2>
+<p>The contents of an array can change.</p>
+<pre><code>grades = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;B+&quot;, &quot;F&quot;]
+grades[2] = &quot;C+&quot;
+p grades</code></pre>
+<p>We can add items to the end of an array, known as pushing. And remove items, known as popping.</p>
+<pre><code>grades = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;B+&quot;, &quot;F&quot;]
+grades.push(&quot;A-&quot;)
+p grades
+grades.pop
+p grades
+grades &lt;&lt; &quot;C+&quot; # equivalent to push, known as the shovel operator
+p grades</code></pre>
+<p>We can add and remove items from the start of the array.</p>
+<pre><code>grades = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;B+&quot;, &quot;F&quot;]
+grades.unshift(&quot;B-&quot;)
+p grades
+grades.shift
+p grades</code></pre>
+<p>We can also remove items by index.</p>
+<pre><code>grades = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;B+&quot;, &quot;F&quot;]
+grades.delete_at(2)
+p grades</code></pre>
+<h2 id="array-elements">Array elements</h2>
+<p>Array elements can be of any type. Ruby allows this but some other languages do not.</p>
+<pre><code>grades = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;B+&quot;, &quot;F&quot;, 98, 55.6]
+p grades</code></pre>
+<p>We can put an array inside another array.</p>
+<pre><code>grades = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, [&quot;A&quot;, &quot;A-&quot;], &quot;F&quot;]
+puts grades.size # how many elements are there? Ruby says 5.
+p grades[3]</code></pre>
+<h2 id="array-operators">Array operators</h2>
+<p>Arrays have operators just like numbers have operators.</p>
+<ul>
+<li><p><code>\+</code> (add elements into a single array)</p></li>
+<li><p><code>\-</code> (remove elements in one array from another)</p></li>
+<li><p><code>&amp;</code> (find the elements present in both arrays, aka intersection)</p></li>
+<li><p><code>|</code> (find the set of elements in either array without duplicates, aka union)</p></li>
+</ul>
+<pre><code>p [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;] + [&quot;D&quot;, &quot;B&quot;, &quot;F&quot;]
+p [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;] - [&quot;D&quot;, &quot;B&quot;, &quot;F&quot;]
+p [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;] &amp; [&quot;D&quot;, &quot;B&quot;, &quot;F&quot;]
+p [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;] | [&quot;D&quot;, &quot;B&quot;, &quot;F&quot;]</code></pre>
+<p>When joining two arrays, make sure you use <code>+</code> instead of <code>&lt;&lt;</code>. The shovel operator might not do what you expect.</p>
+<pre><code>p [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;] &lt;&lt; [&quot;D&quot;, &quot;B&quot;, &quot;F&quot;]</code></pre>
+<h2 id="handy-array-methods">Handy array methods</h2>
+<p>We can get an array's size.</p>
+<pre><code>grades = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;B+&quot;, &quot;F&quot;]
+puts grades.size</code></pre>
+<p>And we can manipulate an array.</p>
+<pre><code>grades = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;B+&quot;, &quot;F&quot;]
+p grades.reverse
+p grades.rotate # rotate elements around the array (circular)
+p grades.shuffle # randomly shuffle elemnts
+p grades.sample # select a random element from the array</code></pre>
+<p>We can interrogate an array about its contents.</p>
+<pre><code># checks if any element in the array meets the criteria
+grades = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;B+&quot;, &quot;F&quot;]
+puts grades.any? {|grade| grade == &quot;B&quot;} </code></pre>
+<pre><code># checks that all elements in the array meet the criteria
+grades = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;B+&quot;, &quot;F&quot;]
+puts grades.all? {|grade| grade == &quot;D&quot;}</code></pre>
+<pre><code># returns true if none of the elements meet the criteria
+grades = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;B+&quot;, &quot;F&quot;]
+puts grades.none? {|grade| grade == &quot;E&quot;}</code></pre>
+<pre><code># checks if the array contains an element
+grades = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;B+&quot;, &quot;F&quot;]
+puts grades.include?(&quot;B&quot;)
+puts grades.include?(&quot;X&quot;)</code></pre>
+<pre><code># find the maximum and minumum values in an array
+grades = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;B+&quot;, &quot;F&quot;]
+puts grades.max
+puts grades.min</code></pre>
+<pre><code># join two arrays together
+grades = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;B+&quot;, &quot;F&quot;]
+p grades
+grades.concat([&quot;D&quot;, &quot;F&quot;])
+p grades</code></pre>
+<pre><code># turn a multi-dimensional array into a single dimension array
+grades = [&quot;A&quot;, &quot;B&quot;, [&quot;C&quot;, &quot;D&quot;], &quot;F&quot;]
+p grades.flatten</code></pre>
+<pre><code># remove nil elements
+grades = [&quot;A&quot;, &quot;B&quot;, nil, &quot;D&quot;, &quot;F&quot;]
+p grades.compact</code></pre>
+<pre><code># remove duplicates
+grades = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;A&quot;, &quot;A&quot;]
+p grades.uniq</code></pre>
+<pre><code># concatenate an array into a string with glue
+grades = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;F&quot;]
+puts grades.join(&quot;, &quot;)</code></pre>
+<p>Methods that have a bang (!) alter the original array. Methods without an exclamation point do not alter the original array.</p>
+<pre><code>grades = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;F&quot;]
+p grades
+p grades.shuffle
+p grades
+p grades.shuffle!
+p grades</code></pre>
