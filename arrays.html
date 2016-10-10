@@ -1,3 +1,35 @@
+<html>
+<head>
+<style>
+body {
+	text-align : justify;
+	margin: 0;
+	font-family: garamond, serif;
+	font-size: 120%;
+	line-height: 1.6875;
+	color: #222;
+	background: #fff;
+}
+.content {
+	margin: auto;
+	padding-left: 3%;
+	padding-right: 3%;
+}
+li { text-align : left; }
+@media screen and (max-width:30em) {
+	img {max-height: 15em;} /* Stop images getting too tall on small screens */
+}
+
+@media screen and (min-width:30em) {
+	body {font-size: 140%;}
+	.content {max-width: 30em;} /* Restrict content width for readability */
+}
+
+</style>
+</head>
+<body>
+
+<div class="content">
 <h1 id="arrays">Arrays</h1>
 <h2 id="what-are-arrays">What are arrays?</h2>
 <p>So far we have used single items of data, e.g. the name of a song, or a student's grade. More common is that we have a collection of items, e.g. a list of songs, or the grades of an entire class. An array can store these collections of items (aka elements).</p>
@@ -125,3 +157,8 @@ p grades.shuffle
 p grades
 p grades.shuffle!
 p grades</code></pre>
+
+</div>
+
+</body>
+</html>
