@@ -23,11 +23,11 @@ Individual elements can be addressed with an index. Like an index in a book that
 grades = ["A", "B", "C", "B+", "F"]
 puts grades[0]
 puts grades[2]
-puts grades[4] # 4 = 5 - 1, 5is the length of the array
+puts grades[4] # 4 = 5 - 1, 5 is the length of the array
 p grades[10] # Use p instead of puts to inspect something
 ```
 
-Ruby also allows a negative array index.
+Ruby allows a negative array index.
 
 ```
 grades = ["A", "B", "C", "B+", "F"]
